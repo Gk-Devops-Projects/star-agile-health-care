@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: healthcare5
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: healthcare5
+  template:
+    metadata:
+      labels:
+        app: healthcare5
+    spec:
+      containers:
+        - name: my-app
+          image: healthcare5
+          ports:
+            - containerPort: 8080
